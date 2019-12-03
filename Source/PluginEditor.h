@@ -40,7 +40,6 @@ public:
     void paint(Graphics&) override;
     void resized() override;
 
-    MidiKeyboardState keyboardState;
     MidiKeyboardComponent keyboardComponent;
 
 private:

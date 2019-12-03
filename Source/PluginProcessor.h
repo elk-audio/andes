@@ -67,6 +67,7 @@ public:
 
     AudioProcessorValueTreeState parameters;
     ValueTree internalParameters;
+    MidiKeyboardState keyboardState;
 
 private:
     //==============================================================================

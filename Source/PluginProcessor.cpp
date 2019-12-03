@@ -196,13 +196,7 @@ void AndesAudioProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& mi
     for (int i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear(i, 0, buffer.getNumSamples());
 
-    if (AudioProcessorEditor* editor = getActiveEditor())
-    {
-        if (AndesAudioProcessorEditor* andesEditor = dynamic_cast<AndesAudioProcessorEditor*> (editor))
-        {
-            andesEditor->keyboardState.processNextMidiBuffer(midiMessages, 0, buffer.getNumSamples(), true);
-        }
-    }
+    keyboardState.processNextMidiBuffer(midiMessages, 0, buffer.getNumSamples(), true);
 
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 }

@@ -28,7 +28,7 @@ AndesAudioProcessorEditor::AndesAudioProcessorEditor(AndesAudioProcessor& p)
       waveformVisualiser(processor),
       env1Editor(processor),
       noiseEditor(processor),
-      keyboardComponent(keyboardState, MidiKeyboardComponent::horizontalKeyboard)
+      keyboardComponent(processor.keyboardState, MidiKeyboardComponent::horizontalKeyboard)
 {
     LookAndFeel::setDefaultLookAndFeel(&andesLookAndFeel);
     setSize(500, 314);
